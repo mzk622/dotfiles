@@ -9,7 +9,9 @@ set -x PATH /home/mzk/.fzf/bin $PATH
 set -U FZF_LEGACY_KEYBINDINGS 0
 
 # for anyenv
-set -x PATH $HOME/.anyenv/bin $PATH
+if test -f $HOME/.anyenv/bin
+    set -x PATH $HOME/.anyenv/bin $PATH
+end
 anyenv init - fish | source
 
 # for go
@@ -24,16 +26,18 @@ function fish_prompt
     powerline-shell --shell bare $status
 end
 
-source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc'
+# source (which gcloud | sed -e 's/bin\/gcloud//g')path.fish.inc
 
 # for the flutter
 set -x FLUTTER_PATH "$HOME/Works/flutter"
 set -x PATH $FLUTTER_PATH/bin $PATH
 
-# for the jdk 
-fish_add_path /opt/homebrew/opt/openjdk/bin
- set -gx CPPFLAGS "-I/opt/homebrew/opt/openjdk/include"
+# for the jdk
+if test -f /opt/homebrew/opt/openjdk/bin/java
+    fish_add_path /opt/homebrew/opt/openjdk/bin
+    set -gx CPPFLAGS "-I/opt/homebrew/opt/openjdk/include"
+end
 
 # for gcloud
-alias gctx=__fzf_gcloud_config
-alias gssh=__fzf_gcloud_instance
+alias gctx=fzf_gcloud_config
+alias gssh=fzf_gcloud_instance

@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
+xcode-select --install
 
 # Install command-line tools using Homebrew.
 echo "installing homebrew..."
-which brew >/dev/null 2>&1 || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+which brew >/dev/null 2>&1 || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "run brew doctor..."
 which brew >/dev/null 2>&1 && brew doctor
@@ -18,7 +19,6 @@ brew install wget --with-iri
 
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi
-brew install grep
 brew install openssh
 brew install git
 
@@ -48,24 +48,33 @@ brew install ucspi-tcp # `tcpserver` etc.
 brew install xpdf
 brew install xz
 
-
 # Install other useful binaries.
 brew install ack
-#brew install exiv2
+brew install anyenv
+brew install bat
+brew install direnv
+brew install exa
+brew install exiv2
+brew install fd
+brew install fish
+brew install fzf
+brew install ghq
 brew install git-lfs
-brew install gs
+brew install hexyl
 brew install imagemagick --with-webp
-brew install lua
-brew install lynx
+brew install kubectx
 brew install p7zip
+brew install peco
 brew install pigz
 brew install pv
+brew install procs
 brew install rename
+brew install ripgrep
 brew install rlwrap
 brew install ssh-copy-id
+brew install tokei
 brew install tree
 brew install vbindiff
-brew install zopfli
 
 # Remove outdated versions from the cellar.
 echo "run brew cleanup..."
