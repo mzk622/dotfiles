@@ -1,4 +1,4 @@
-source ~/.alias
+source $HOME/.alias
 
 # for the homebrew
 set -x BREW_PATH /opt/homebrew
@@ -29,7 +29,7 @@ end
 # source (which gcloud | sed -e 's/bin\/gcloud//g')path.fish.inc
 
 # for the flutter
-set -x FLUTTER_PATH "$HOME/Works/flutter"
+set -x FLUTTER_PATH $HOME/Works/flutter
 set -x PATH $FLUTTER_PATH/bin $PATH
 
 # for the jdk

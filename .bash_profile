@@ -1,4 +1,4 @@
-source ~/.alias
+source $HOME/.alias
 
 # Add `~/Works/bin` to the `$PATH`
 export GOPATH="$HOME/Works"
