@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#for kubectl
-deb [trusted=yes] http://ftp.de.debian.org/debian buster main
 echo "run apt update..."
 apt -y update
 
@@ -66,7 +64,9 @@ apt install -y fish
 apt install -y fzf
 apt install -y git-lfs
 # apt install -y hexyl
+apt install htop
 apt install -y imagemagick
+snap install kubectl
 snap install -y p7zip-desktop
 apt install -y peco
 apt install -y pigz
@@ -81,3 +81,8 @@ apt install -y vbindiff
 echo "run apt autoremove, autoclean..."
 apt autoremove
 apt autoclean
+
+# docker install
+echo "run install docker"
+curl https://get.docker.com | sh \
+  && systemctl --now enable docker

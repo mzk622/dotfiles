@@ -1,4 +1,4 @@
-source $HOME/.alias
+#source $HOME/.alias
 
 # Add `~/Works/bin` to the `$PATH`
 export GOPATH="$HOME/Works"
@@ -13,6 +13,7 @@ if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
   PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
-if [test -f $HOME/.anyenv/bin]; then
+if test -f ~/.anyenv/bin/anyenv ; then
     export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init -)"
 fi

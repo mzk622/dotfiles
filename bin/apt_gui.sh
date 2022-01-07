@@ -26,7 +26,7 @@ apt update
 apt install albert
 
 ## for pycharm
-snap install pycharm-educational --classic
+snap install pycharm-professional --classic
 
 ## for goland
 snap install goland --classic
