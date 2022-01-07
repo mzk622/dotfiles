@@ -26,7 +26,6 @@ echo "link for tmux"
 ln -sfn $PWD/.tmux.conf $HOME/.tmux.conf
 
 echo "link for vim"
-ln -sfn $PWD/.vim $HOME/.vim
 ln -sfn $PWD/.vimrc $HOME/.vimrc
 
 # install anyenv
@@ -62,7 +61,7 @@ if [ ! $FONT_DIR/Source\ Code\ Pro\ Medium\ for\ Powerline.otf ]; then
     rm -rf fonts
 fi
 
-echo "install and update fisher"
-if ! command -v fisher &> /dev/null ; then
-    curl -sL https://git.io/fisher | fish && fisher install jorgebucaran/fisher && fisher update
-fi
+# echo "install and update fisher"
+# if ! command -v fisher &> /dev/null ; then
+#     curl -sL https://git.io/fisher | fish && fisher install jorgebucaran/fisher && fisher update
+# fi

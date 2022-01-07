@@ -9,7 +9,7 @@ set -x PATH /home/mzk/.fzf/bin $PATH
 set -U FZF_LEGACY_KEYBINDINGS 0
 
 # for anyenv
-if test -f $HOME/.anyenv/bin
+if test -f $HOME/.anyenv/bin/anyenv
     set -x PATH $HOME/.anyenv/bin $PATH
 end
 anyenv init - fish | source

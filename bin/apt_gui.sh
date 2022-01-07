@@ -33,7 +33,7 @@ apt install albert
 
 ## for pycharm
 echo "running install pycharm..."
-snap install pycharm-educational --classic
+snap install pycharm-professional --classic
 
 ## for goland
 echo "running install goland..."

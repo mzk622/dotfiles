@@ -1,9 +1,12 @@
-# alias code='open -a /Applications/Visual\ Studio\ Code.app'
-# alias chrome='open -a /Applications/Google\ Chrome.app'
+if test "(uname)" = "Darwin"
+    alias code='open -a /Applications/Visual\ Studio\ Code.app'
+    alias chrome='open -a /Applications/Google\ Chrome.app'
+end
+
 # alias ls='exa'
-alias cat='bat'
+alias cat='batcat'
 alias ps='procs'
-alias grep='rg'
+# alias grep='rg'
 alias find='fd'
 alias od='hexyl'
 # alias wc='tokei'
