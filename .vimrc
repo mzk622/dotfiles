@@ -1,6 +1,5 @@
 " Use the Solarized Dark theme
 set background=dark
-colorscheme solarized
 let g:solarized_termtrans=1
 
 " Make Vim more useful
@@ -77,3 +76,9 @@ set title
 set showcmd
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
+
+
+packadd! dracula
+syntax enable
+colorscheme dracula
+
