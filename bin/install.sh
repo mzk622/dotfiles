@@ -7,9 +7,9 @@ mkdir -p $HOME/Works/pkg
 
 # install anyenv
 echo "install anyenv"
-if [ ! $HOME/.anyenv ]; then
-    git clone --depth 1 https://github.com/anyenv/anyenv $HOME/.anyenv
-fi
+# if [ ! $HOME/.anyenv ]; then
+git clone --depth 1 https://github.com/anyenv/anyenv $HOME/.anyenv
+# fi
 
 export PATH="$HOME/.anyenv/bin:$PATH"
 ~/.anyenv/bin/anyenv init
@@ -39,7 +39,7 @@ if ! command -v ghq &> /dev/null ; then
     cd $HOME
     sudo rm -rf $HOME/ghq
 fi
-mv go/1.16.15/bin/ghq ./Works/bin/
+mv go/1.16.15/bin/ghq $HOME/Works/bin/
 
 # install powerline fonts
 echo "install powerline fonts"
@@ -60,6 +60,7 @@ fi
 pip install powerline-shell
 
 # create symbolic link
+cd $HOME/Works/src/github.com/mzk622/dotfiles
 echo "link for git"
 ln -sfn $PWD/.gitconfig $HOME/.gitconfig
 ln -sfn $PWD/.gitignore $HOME/.gitignore
@@ -87,7 +88,7 @@ ln -sfn $PWD/.vim $HOME/.vim
 
 echo "install and update fisher"
 if ! command -v fisher &> /dev/null ; then
-    curl -sL https://git.io/fisher | fish && fisher install jorgebucaran/fisher && fisher update
+    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher && fisher update
 fi
 
 

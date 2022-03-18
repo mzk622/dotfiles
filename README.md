@@ -7,14 +7,15 @@ dotfiles
 
 -- move to dotfiles to Works/src/github.com/mzk622
 ``` bash
-mkdir ~/Downloads ~/Works ~/Documents
-mkdir ~/Works/src/github.com/mzk622
-cd ~/Works/src/github.com/mzk622
+mkdir $HOME/Downloads $HOME/Works $HOME/Documents
+mkdir -p $HOME/Works/src/github.com/mzk622
+# please move to dotfiles
+cd $HOME/Works/src/github.com/mzk622/dotfiles
 sudo sh ./bin/apt.sh
 sudo sh ./bin/install.sh
 ```
 
 then please mv .ssh and change permission
 ``` bash
-chmod 0600 ~/.ssh/*
+chmod 0600 $HOME/.ssh/*
 ```
