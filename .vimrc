@@ -78,7 +78,7 @@ set showcmd
 set scrolloff=3
 
 
-packadd! dracula
+:packadd dracula
 syntax enable
 colorscheme dracula
 

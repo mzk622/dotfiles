@@ -4,9 +4,9 @@ if test (uname -s) = "Darwin"
 end
 
 # alias ls='exa'
-alias cat='bat'
-alias ps='procs'
+# alias cat='bat'
+# alias ps='procs'
 # alias grep='rg'
-alias find='fd'
-alias od='hexyl'
+# alias find='fd'
+# alias od='hexyl'
 # alias wc='tokei'
