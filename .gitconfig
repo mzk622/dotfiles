@@ -5,3 +5,5 @@
 	email = msageha@gmail.com
 [core]
 	editor = vim
+[http]
+	postBuffer = 2M
