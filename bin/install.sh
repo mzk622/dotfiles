@@ -5,16 +5,6 @@ mkdir -p $HOME/Works/bin
 mkdir -p $HOME/Works/src
 mkdir -p $HOME/Works/pkg
 
-echo "link for git"
-ln -sfn $PWD/.gitconfig $HOME/.gitconfig
-ln -sfn $PWD/.gitignore $HOME/.gitignore
-
-echo "link for tmux"
-ln -sfn $PWD/.tmux.conf $HOME/.tmux.conf
-
-echo "link for vim"
-ln -sfn $PWD/.vimrc $HOME/.vimrc
-
 # install anyenv
 echo "install anyenv"
 if [ ! $HOME/.anyenv ]; then
@@ -70,6 +60,16 @@ fi
 pip install powerline-shell
 
 # create symbolic link
+echo "link for git"
+ln -sfn $PWD/.gitconfig $HOME/.gitconfig
+ln -sfn $PWD/.gitignore $HOME/.gitignore
+
+echo "link for tmux"
+ln -sfn $PWD/.tmux.conf $HOME/.tmux.conf
+
+echo "link for vim"
+ln -sfn $PWD/.vimrc $HOME/.vimrc
+
 echo "link .alias"
 ln -sfn $PWD/.alias $HOME/.alias
 
