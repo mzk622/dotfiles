@@ -15,7 +15,9 @@ gcloud config set account "msageha@gmail.com"
 gcloud config configurations create jarvis-ml-dev
 gcloud config set project jarvis-ml-dev
 gcloud config set account "mizuki@jarvisml.com"
+gcloud auth configure-docker
 
 gcloud config configurations create jarvis-ml-prod
 gcloud config set project jarvis-ml-prod
 gcloud config set account "mizuki@jarvisml.com"
+gcloud auth configure-docker
