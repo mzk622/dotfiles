@@ -72,6 +72,7 @@ brew install rename
 brew install ripgrep
 brew install rlwrap
 brew install ssh-copy-id
+brew install stern
 brew install tokei
 brew install tree
 brew install vbindiff

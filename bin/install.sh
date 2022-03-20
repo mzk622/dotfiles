@@ -81,7 +81,11 @@ echo "link for fish"
 mkdir -p $HOME/.config/fish/functions
 ln -sfn $PWD/.config/fish/config.fish $HOME/.config/fish/config.fish
 ln -sfn $PWD/.config/fish/fish_plugins $HOME/.config/fish/fish_plugins
-ln -sfn $PWD/.config/fish/self_functions/fzf_gcloud_config.fish $HOME/.config/fish/functions/fzf_gcloud_config.fish
+
+files=(`ls -1 $PWD/.config/fish/self_functions`)
+for file_name in ${files[@]}; do
+    ln -sfn $PWD/.config/fish/self_functions/${file_name} $HOME/.config/fish/functions/${file_name}
+done
 
 echo "link for vim"
 ln -sfn $PWD/.vim $HOME/.vim
