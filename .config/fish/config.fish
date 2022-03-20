@@ -1,18 +1,21 @@
 source $HOME/.alias
 
 # for the homebrew
-set -x BREW_PATH /opt/homebrew
-set -x PATH $BREW_PATH/bin $PATH
+if test -f /opt/homebrew
+    set -x BREW_PATH /opt/homebrew
+    fish_add_path $BREW_PATH/bin
+    fish_add_path $BREW_PATH/sbin
+end
 
 # for fzf
-set -x PATH /home/mzk/.fzf/bin $PATH
+fish_add_path /home/mzk/.fzf/bin
 set -U FZF_LEGACY_KEYBINDINGS 0
 
 # for anyenv
 if test -f $HOME/.anyenv/bin/anyenv
-    set -x PATH $HOME/.anyenv/bin $PATH
+    fish_add_path $HOME/.anyenv/bin
+    anyenv init - fish | source
 end
-anyenv init - fish | source
 
 # for go
 set -x GOPATH "$HOME/Works"
@@ -29,8 +32,10 @@ end
 # source (which gcloud | sed -e 's/bin\/gcloud//g')path.fish.inc
 
 # for the flutter
-set -x FLUTTER_PATH $HOME/Works/flutter
-set -x PATH $FLUTTER_PATH/bin $PATH
+if test -f $HOME/Works/flutter
+    set -x FLUTTER_PATH $HOME/Works/flutter
+    fish_add_path $FLUTTER_PATH/bin
+end
 
 # for the jdk
 if test -f /opt/homebrew/opt/openjdk/bin/java
@@ -39,5 +44,6 @@ if test -f /opt/homebrew/opt/openjdk/bin/java
 end
 
 # for gcloud
-alias gctx=fzf_gcloud_config
-alias gssh=fzf_gcloud_instance
+alias fgc=fzf_gcloud_config
+alias fga=fzf_gcloud_auth
+alias gssh=fzf_gcloud_ssh
