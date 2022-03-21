@@ -28,10 +28,20 @@ set -x PATH $GOPATH/bin $PATH
 # for direnv
 eval (direnv hook fish)
 
-# for powerline-shell
-function fish_prompt
-    powerline-shell --shell bare $status
+# for powerline
+
+set -x POWERLINE_PATH (pip show powerline-status | grep Location | string trim -c "Location: ")"/powerline"
+
+set fish_function_path $fish_function_path "$POWERLINE_PATH/bindings/fish"
+powerline-setup
+
+function fish_right_prompt -d 'Write out the right prompt'
+    date '+%H:%M:%S'
 end
+
+# function fish_prompt
+#     powerline-shell --shell bare $status
+# end
 
 # source (which gcloud | sed -e 's/bin\/gcloud//g')path.fish.inc
 
