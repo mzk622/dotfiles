@@ -5,41 +5,20 @@ mkdir -p $HOME/Works/bin
 mkdir -p $HOME/Works/src
 mkdir -p $HOME/Works/pkg
 
-# install anyenv
-echo "install anyenv"
-# if [ ! $HOME/.anyenv ]; then
-git clone --depth 1 https://github.com/anyenv/anyenv $HOME/.anyenv
-# fi
+# install asdf
+git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf
+mkdir -p $HOME/.config/fish/completions
+ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+. $HOME/.asdf/asdf.sh
 
-export PATH="$HOME/.anyenv/bin:$PATH"
-~/.anyenv/bin/anyenv init
-anyenv install --init
-
-# install pyenv goenv nodenv
-anyenv install pyenv
-anyenv install goenv
-anyenv install nodenv
-exec $SHELL -l
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
-pyenv install 3.9.11
-pyenv global 3.9.11
-goenv install 1.16.15
-goenv global 1.16.15
-nodenv install 16.14.2
-nodenv global 16.14.2
-
-## NEED to fix to install go
-# install ghq
-echo "install ghq"
-if ! command -v ghq &> /dev/null ; then
-    git clone --depth 1 https://github.com/x-motemen/ghq $HOME/ghq
-    cd $HOME/ghq
-    make install
-    cd $HOME
-    sudo rm -rf $HOME/ghq
-fi
-mv go/1.16.15/bin/ghq $HOME/Works/bin/
+cat .tool-versions | while read line
+do
+  ARR=(${line/// })
+  asdf plugin add ${ARR[0]}
+  asdf install ${ARR[0]}
+  asdf global ${ARR[0]} ${ARR[1]}
+done
+asdf reshim python
 
 # install powerline fonts
 echo "install powerline fonts"
@@ -57,8 +36,12 @@ if [ ! $FONT_DIR/Source\ Code\ Pro\ Medium\ for\ Powerline.otf ]; then
     cd ..
     rm -rf fonts
 fi
-# pip install powerline-shell
 pip install powerline-status
+
+echo "insatll source-han-code-jp"
+curl -L https://github.com/adobe-fonts/source-han-code-jp/archive/refs/tags/2.012R.zip --output source-han-code-jp.zip
+unzip -j source-han-code-jp.zip -d source-han-code-jp
+mv source-han-code-jp/*.otf $FONT_DIR/
 
 # create symbolic link
 cd $HOME/Works/src/github.com/mzk622/dotfiles
@@ -88,7 +71,7 @@ for file_name in ${files[@]}; do
     ln -sfn $PWD/.config/fish/self_functions/${file_name} $HOME/.config/fish/functions/${file_name}
 done
 
-echo "link for powerline-shell"
+echo "link for powerline-status"
 # ln -sfn $PWD/.config/powerline-shell/ $HOME/.config/powerline-shell
 POWERLINE_PATH="`pip show powerline-status | grep Location | sed -e 's/Location: //g'`/powerline"
 ln -sfn $PWD/powerline/shell.json $POWERLINE_PATH/config_files/themes/shell/shell.json

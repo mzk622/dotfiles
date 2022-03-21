@@ -1,0 +1,14 @@
+python 3.9.11
+nodejs 16.14.2
+golang 1.16.15
+ghq 1.2.1
+vim 8.2.4604
+direnv 2.30.3
+kubectl 1.23.5
+fzf 0.28.0
+gcloud 377.0.0
+kubectx 0.9.4
+peco 0.5.10
+stern 1.21.0
+tokei 12.1.2
+flutter 2.10.3-stable

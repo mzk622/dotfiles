@@ -15,10 +15,8 @@ echo "ok. run brew upgrade..."
 brew upgrade
 
 # Install `wget` with IRI support.
-brew install wget --with-iri
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi
 brew install openssh
 brew install git
 
@@ -50,21 +48,15 @@ brew install xz
 
 # Install other useful binaries.
 brew install ack
-brew install anyenv
 brew install bat
-brew install direnv
 brew install exa
 brew install exiv2
 brew install fd
 brew install fish
-brew install fzf
-brew install ghq
 brew install git-lfs
 brew install hexyl
 brew install imagemagick --with-webp
-brew install kubectx
 brew install p7zip
-brew install peco
 brew install pigz
 brew install pv
 brew install procs
@@ -72,8 +64,6 @@ brew install rename
 brew install ripgrep
 brew install rlwrap
 brew install ssh-copy-id
-brew install stern
-brew install tokei
 brew install tree
 brew install vbindiff
 
