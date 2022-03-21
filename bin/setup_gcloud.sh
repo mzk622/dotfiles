@@ -21,3 +21,7 @@ gcloud config set project jarvis-ml-prod
 gcloud config set account "mizuki@jarvisml.com"
 
 gcloud auth configure-docker
+
+gcloud container clusters get-credentials gpu-cluster --zone us-central1-c --project jarvis-ml-dev
+
+gcloud container clusters get-credentials gpu-cluster --zone us-central1-c --project jarvis-ml-prod
