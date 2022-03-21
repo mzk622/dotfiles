@@ -21,6 +21,8 @@ export PATH="$PATH:$GOPATH/bin"
 #   PS1=$(powerline-shell $?)
 # }
 
+export POWERLINE_PATH="`pip show powerline-status | grep Location | sed -e 's/Location: //g'`/powerline"
+
 if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
   PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
