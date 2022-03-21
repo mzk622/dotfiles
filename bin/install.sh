@@ -57,7 +57,7 @@ if [ ! $FONT_DIR/Source\ Code\ Pro\ Medium\ for\ Powerline.otf ]; then
     cd ..
     rm -rf fonts
 fi
-pip install powerline-shell
+# pip install powerline-shell
 pip install powerline-status
 
 # create symbolic link
@@ -92,6 +92,7 @@ echo "link for powerline-shell"
 # ln -sfn $PWD/.config/powerline-shell/ $HOME/.config/powerline-shell
 POWERLINE_PATH="`pip show powerline-status | grep Location | sed -e 's/Location: //g'`/powerline"
 ln -sfn $PWD/powerline/shell.json $POWERLINE_PATH/config_files/themes/shell/shell.json
+ln -sfn $PWD/powerline/config.json $POWERLINE_PATH/config_files/themes/config.json
 
 echo "link for vim"
 ln -sfn $PWD/.vim $HOME/.vim
