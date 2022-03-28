@@ -7,3 +7,5 @@
 	editor = vim
 [http]
 	postBuffer = 2M
+[init]
+	defaultBranch = master

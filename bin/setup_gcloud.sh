@@ -6,6 +6,8 @@ gcloud auth login --no-launch-browser
 echo "Please login jarvis account"
 gcloud auth login --no-launch-browser
 
+gcloud auth application-default login --no-launch-browser
+
 gcloud config configurations create ohte
 gcloud config set project with-prize
 gcloud config set compute/region asia-northeast1

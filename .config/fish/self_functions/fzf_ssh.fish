@@ -1,5 +1,5 @@
 function fzf_ssh -d "List ssh"
-    set -l commandline (__fzf_parse_commandline)
+    # set -l commandline (__fzf_parse_commandline)
     set -l dir $commandline[1]
     set -l fzf_query $commandline[2]
 

@@ -13,12 +13,13 @@ export POWERLINE_PATH="`pip show powerline-status | grep Location | sed -e 's/Lo
 eval "$(direnv hook bash)"
 
 # for ssh auto open tmux
+export TMUX_TMPDIR=/tmp
 SESSION_NAME=tmux
 
 if [[ -z "$TMUX" && -n "$SSH_TTY" ]] && type tmux >/dev/null 2>&1; then
   option=""
   if tmux has-session -t ${SESSION_NAME}; then
-    option="attach -t ${SESSION_NAME}"
+    option="attach -t ${SESSION_NAME} -d"
   else
     option="new -s ${SESSION_NAME}"
   fi  

@@ -9,6 +9,7 @@ source venv/bin/activate.fish
 pip install keyring keyrings.google-artifactregistry-auth
 ln -sfn $HOME/Works/src/github.com/mzk622/dotfiles/jarvis/pip.conf $PWD/venv/
 pip install -r requirements.txt
+deactivate
 echo "source venv/bin/activate" >> .envrc
 direnv allow
 
@@ -19,6 +20,8 @@ python3 -m venv venv
 source venv/bin/activate.fish
 pip install keyring keyrings.google-artifactregistry-auth
 ln -sfn $HOME/Works/src/github.com/mzk622/dotfiles/jarvis/pip.conf $PWD/venv/
+deactivate
+direnv allow
 
 # for notebook
 ghq get git@bitbucket.org:jarvisml/notebooks.git
@@ -28,6 +31,7 @@ source venv/bin/activate.fish
 pip install keyring keyrings.google-artifactregistry-auth
 ln -sfn $HOME/Works/src/github.com/mzk622/dotfiles/jarvis/pip.conf $PWD/venv/
 pip install -r requirements.txt
+deactivate
 echo "source venv/bin/activate" >> .envrc
 direnv allow
 
@@ -39,5 +43,18 @@ source venv/bin/activate.fish
 pip install keyring keyrings.google-artifactregistry-auth
 ln -sfn $HOME/Works/src/github.com/mzk622/dotfiles/jarvis/pip.conf $PWD/venv/
 pip install -r requirements.txt
+deactivate
 echo "source venv/bin/activate" >> .envrc
 direnv allow
+
+# for experiment
+ghq get git@bitbucket.org:jarvisml/experiment.git
+cd ~/Works/src/bitbucket.org/jarvisml/experiment
+source venv/bin/activate.fish
+pip install keyring keyrings.google-artifactregistry-auth
+ln -sfn $HOME/Works/src/github.com/mzk622/dotfiles/jarvis/pip.conf $PWD/venv/
+pip install -r requirements.txt
+deactivate
+echo "source venv/bin/activate" >> .envrc
+direnv allow
+

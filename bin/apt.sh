@@ -14,7 +14,6 @@ echo "run apt install more recent versions of some ubuntu tools..."
 # Install more recent versions of some ubuntu tools.
 apt install -y wget
 apt install -y curl
-apt install -y vim
 apt install -y git
 apt install -y build-essential
 apt install -y libffi-dev
@@ -56,19 +55,16 @@ echo "run apt install useful tools..."
 # Install other useful binaries.
 apt install -y ack-grep
 apt install -y bat
-apt install -y direnv
 apt install -y exa
 apt install -y exiv2
 apt install -y fd-find
 apt install -y fish
-apt install -y fzf
 apt install -y git-lfs
 # apt install -y hexyl
 apt install htop
 apt install -y imagemagick
 snap install kubectl
 snap install -y p7zip-desktop
-apt install -y peco
 apt install -y pigz
 apt install -y pv
 snap install -y procs

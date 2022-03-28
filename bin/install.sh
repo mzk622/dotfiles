@@ -18,7 +18,6 @@ do
   asdf install ${ARR[0]}
   asdf global ${ARR[0]} ${ARR[1]}
 done
-asdf reshim python
 
 # install powerline fonts
 echo "install powerline fonts"
@@ -37,11 +36,14 @@ if [ ! $FONT_DIR/Source\ Code\ Pro\ Medium\ for\ Powerline.otf ]; then
     rm -rf fonts
 fi
 pip install powerline-status
+asdf reshim python
 
 echo "insatll source-han-code-jp"
 curl -L https://github.com/adobe-fonts/source-han-code-jp/archive/refs/tags/2.012R.zip --output source-han-code-jp.zip
 unzip -j source-han-code-jp.zip -d source-han-code-jp
 mv source-han-code-jp/*.otf $FONT_DIR/
+rm -rm source-han-code-jp
+rm source-han-code-jp.zip
 
 # create symbolic link
 cd $HOME/Works/src/github.com/mzk622/dotfiles
