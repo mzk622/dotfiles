@@ -23,6 +23,18 @@ ln -sfn $HOME/Works/src/github.com/mzk622/dotfiles/jarvis/pip.conf $PWD/venv/
 deactivate
 direnv allow
 
+# for platform-integration
+ghq get git@bitbucket.org:jarvisml/platform-integration.git
+cd ~/Works/src/bitbucket.org/jarvisml/platform-integration
+python3 -m venv venv
+source venv/bin/activate.fish
+pip install keyring keyrings.google-artifactregistry-auth
+ln -sfn $HOME/Works/src/github.com/mzk622/dotfiles/jarvis/pip.conf $PWD/venv/
+deactivate
+echo "source venv/bin/activate" >> .envrc
+direnv allow
+
+
 # for notebook
 ghq get git@bitbucket.org:jarvisml/notebooks.git
 cd ~/Works/src/bitbucket.org/jarvisml/notebooks
