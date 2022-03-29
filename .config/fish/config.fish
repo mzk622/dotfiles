@@ -38,9 +38,6 @@ function fish_right_prompt -d 'Write out the right prompt'
     date '+%H:%M:%S'
 end
 
-# function fish_prompt
-#     powerline-shell --shell bare $status
-# end
 
 # source (which gcloud | sed -e 's/bin\/gcloud//g')path.fish.inc
 

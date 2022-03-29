@@ -1,4 +1,4 @@
-python 3.9.11
+python 3.8.13
 nodejs 16.14.2
 golang 1.16.15
 ghq 1.2.1
@@ -13,4 +13,3 @@ stern 1.21.0
 tokei 12.1.2
 flutter 2.10.3-stable
 cloudsql-proxy 1.29.0
-mysql 8.0.28

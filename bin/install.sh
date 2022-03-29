@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # create directory for init
 mkdir -p $HOME/Works/bin
@@ -6,10 +6,10 @@ mkdir -p $HOME/Works/src
 mkdir -p $HOME/Works/pkg
 
 # install asdf
-git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf
-mkdir -p $HOME/.config/fish/completions
-ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
-. $HOME/.asdf/asdf.sh
+# git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf
+# mkdir -p $HOME/.config/fish/completions
+# ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+# . $HOME/.asdf/asdf.sh
 
 cat .tool-versions | while read line
 do
