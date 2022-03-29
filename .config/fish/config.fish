@@ -12,7 +12,7 @@ if test -d /opt/homebrew # check if a directory
 end
 
 # for fzf
-fish_add_path /home/mzk/.fzf/bin
+fish_add_path $HOME/.fzf/bin
 set -U FZF_LEGACY_KEYBINDINGS 0
 
 # for asdf
