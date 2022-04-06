@@ -1,11 +1,11 @@
 [ghq]
-	root = $HOME/Works/src
+	root = ~/Works/src
 [user]
 	name = Mizuki Sango
 	email = msageha@gmail.com
 [core]
 	editor = vim
-	excludesFile = $HOME/.gitignore
+	excludesFile = ~/.gitignore
 [http]
 	postBuffer = 2M
 [init]
