@@ -18,6 +18,8 @@ cd $HOME/Works/src/github.com/mzk622/dotfiles
 sudo sh ./bin/apt.sh
 
 # install asdf (avoid for Bad substitution)
+
+```
 git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf
 mkdir -p $HOME/.config/fish/completions
 ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions

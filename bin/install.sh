@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # create directory for init
 mkdir -p $HOME/Works/bin
@@ -13,7 +13,7 @@ mkdir -p $HOME/Works/pkg
 
 cat .tool-versions | while read line
 do
-  ARR=(${line/// })
+  ARR=${line/// }
   asdf plugin add ${ARR[0]}
   asdf install ${ARR[0]}
   asdf global ${ARR[0]} ${ARR[1]}
@@ -68,7 +68,7 @@ mkdir -p $HOME/.config/fish/functions
 ln -sfn $PWD/.config/fish/config.fish $HOME/.config/fish/config.fish
 ln -sfn $PWD/.config/fish/fish_plugins $HOME/.config/fish/fish_plugins
 
-files=(`ls -1 $PWD/.config/fish/self_functions`)
+files=`ls -1 $PWD/.config/fish/self_functions`
 for file_name in ${files[@]}; do
     ln -sfn $PWD/.config/fish/self_functions/${file_name} $HOME/.config/fish/functions/${file_name}
 done

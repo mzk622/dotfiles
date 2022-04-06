@@ -79,6 +79,6 @@ apt autoremove
 apt autoclean
 
 # docker install
-echo "run install docker"
-curl https://get.docker.com | sh \
-  && systemctl --now enable docker
+# echo "run install docker"
+# curl https://get.docker.com | sh \
+#   && systemctl --now enable docker
