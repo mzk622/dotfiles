@@ -13,7 +13,7 @@ mkdir -p $HOME/Works/pkg
 
 cat .tool-versions | while read line
 do
-  ARR=${line/// }
+  ARR=(${line/// })
   asdf plugin add ${ARR[0]}
   asdf install ${ARR[0]}
   asdf global ${ARR[0]} ${ARR[1]}

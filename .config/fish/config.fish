@@ -21,8 +21,8 @@ if test -d $HOME/.asdf
 end
 
 # for go
-set -x GOPATH "$HOME/Works"
-set -x PATH $GOPATH/bin $PATH
+# set -x GOPATH "$HOME/Works"
+# set -x PATH $GOPATH/bin $PATH
 
 # for direnv
 eval (direnv hook fish)
