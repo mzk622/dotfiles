@@ -28,6 +28,7 @@ else
   # Linux
   FONT_DIR="$HOME/.local/share/fonts"
 fi
+mkdir -p $FONT_DIR
 if [ ! $FONT_DIR/Source\ Code\ Pro\ Medium\ for\ Powerline.otf ]; then
     git clone --depth=1 https://github.com/powerline/fonts.git
     cd fonts
@@ -42,7 +43,7 @@ echo "insatll source-han-code-jp"
 curl -L https://github.com/adobe-fonts/source-han-code-jp/archive/refs/tags/2.012R.zip --output source-han-code-jp.zip
 unzip -j source-han-code-jp.zip -d source-han-code-jp
 mv source-han-code-jp/*.otf $FONT_DIR/
-rm -rm source-han-code-jp
+rm -r source-han-code-jp
 rm source-han-code-jp.zip
 
 # create symbolic link
@@ -66,7 +67,6 @@ ln -sfn $PWD/.bash_profile $HOME/.bash_profile
 echo "link for fish"
 mkdir -p $HOME/.config/fish/functions
 ln -sfn $PWD/.config/fish/config.fish $HOME/.config/fish/config.fish
-ln -sfn $PWD/.config/fish/fish_plugins $HOME/.config/fish/fish_plugins
 
 files=`ls -1 $PWD/.config/fish/self_functions`
 for file_name in ${files[@]}; do
@@ -85,6 +85,8 @@ ln -sfn $PWD/.vim $HOME/.vim
 echo "install and update fisher"
 if ! command -v fisher &> /dev/null ; then
     curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher && fisher update
+    ln -sfn $PWD/.config/fish/fish_plugins $HOME/.config/fish/fish_plugins
+    fisher update
 fi
 
 echo "download fish completion"
